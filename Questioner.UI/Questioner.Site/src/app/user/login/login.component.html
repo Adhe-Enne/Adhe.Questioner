@@ -1,0 +1,32 @@
+<!-- <p>login works!</p> -->
+ <div class="center">
+  <div class="row w-50">
+    <div class="col-lg-6 offset-lg-3">
+      <div class="card text-center p-20px">
+        <h3 class="h3-tag">Login</h3>
+        <br>
+        <form [formGroup]="this.login" (ngSubmit)="this.log()">
+          <div class="mb-3">
+            <input type="text" class="form-control" placeholder="Usuario" [formControlName]="LoginEnum.User">
+            <span class="text-danger" *ngIf="this.commonService.checkControl(this.login, LoginEnum.User)">
+              El Usuario <strong> es Requerido</strong>
+            </span>
+          </div>
+          <div class="mb-3">
+            <input type="password" class="form-control" placeholder="Contraseña" [formControlName]="LoginEnum.Pass">
+            <span class="text-danger" *ngIf="this.commonService.checkControl(this.login, LoginEnum.Pass)">
+              La contraseña <strong> es Requerida</strong>
+            </span>
+          </div>
+          <div class="">
+            <button class="btn btn-primary btn-login" type="submit" [disabled]="this.login.invalid" > Aceptar </button>
+            <button class="btn btn-secondary m-2 "  [routerLink]="['/welcome']" > Volver </button>
+          </div>
+          <div class="">
+            <a class="a-tag" [routerLink]="['/register']"> Crear Cuenta </a>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+ </div>

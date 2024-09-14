@@ -1,0 +1,33 @@
+/* You can add global styles to this file, and also import other style files */
+/* styles.css */
+:root {
+  --color-hover: #EE4B08;
+  --color-common: #F05F44;
+}
+
+.layout {
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(img/fondo.jpg) !important;
+  background-size: cover;
+  background-position: center;
+}
+
+.w-100{
+  width: 100% !important;
+}
+.w-50 {
+  width: 50% !important;
+}
+.p-20px {
+  padding: 20px !important;
+}
+
+.center {
+  display: flex !important;
+  align-items: center!important;
+  justify-content: center!important;
+  min-height: 100vh!important;
+}
+
+.h3-tag{
+  font-family: 'Rowdies', cursive;
+}
