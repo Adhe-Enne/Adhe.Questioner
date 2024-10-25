@@ -1,18 +1,4 @@
-.btn-x1 {
-  background-color: var(--color-common) !important;
-  border-color: var(--color-common) !important;
-  margin: 10px !important;
-  padding: 1rem 2rem !important;
-  border-radius: 100px !important;
-  color: #fff;
-  /* Asegura que el texto sea legible */
-}
 
-.btn-x1:hover {
-  background-color: var(--color-hover) ;
-  border-color: var(--color-hover) ;
-  border-width: 4px ;
-}
 /* .center {
   display: flex !important;
   align-items: center !important;

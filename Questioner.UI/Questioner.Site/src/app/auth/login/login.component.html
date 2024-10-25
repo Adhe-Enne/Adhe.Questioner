@@ -5,25 +5,26 @@
       <div class="card text-center p-20px">
         <h3 class="h3-tag">Login</h3>
         <br>
-        <form [formGroup]="this.login" (ngSubmit)="this.log()">
+        <app-loading *ngIf="this.loading"></app-loading>
+        <form [formGroup]="this.login" (ngSubmit)="this.log()" class="pt-1">
           <div class="mb-3">
             <input type="text" class="form-control" placeholder="Usuario" [formControlName]="LoginEnum.User">
-            <span class="text-danger" *ngIf="this.commonService.checkControl(this.login, LoginEnum.User)">
+            <span class="text-danger" *ngIf="this.comSrv.checkControl(this.login, LoginEnum.User)">
               El Usuario <strong> es Requerido</strong>
             </span>
           </div>
           <div class="mb-3">
             <input type="password" class="form-control" placeholder="Contraseña" [formControlName]="LoginEnum.Pass">
-            <span class="text-danger" *ngIf="this.commonService.checkControl(this.login, LoginEnum.Pass)">
+            <span class="text-danger" *ngIf="this.comSrv.checkControl(this.login, LoginEnum.Pass)">
               La contraseña <strong> es Requerida</strong>
             </span>
           </div>
           <div class="">
-            <button class="btn btn-primary btn-login" type="submit" [disabled]="this.login.invalid" > Aceptar </button>
-            <button class="btn btn-secondary m-2 "  [routerLink]="['/welcome']" > Volver </button>
+            <button class="btn btn-primary btn-login" type="submit" [disabled]="this.login.invalid"  > Aceptar </button>
+            <button class="btn btn-secondary m-2 "  [routerLink]="['/home']" > Volver </button>
           </div>
           <div class="">
-            <a class="a-tag" [routerLink]="['/register']"> Crear Cuenta </a>
+            <a class="a-tag" [routerLink]="['/home/register']"> Crear Cuenta </a>
           </div>
         </form>
       </div>

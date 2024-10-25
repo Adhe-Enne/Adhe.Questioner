@@ -4,7 +4,7 @@ import { RouterLink, RouterOutlet } from '@angular/router';
 @Component({
   selector: 'app-welcome',
   standalone: true,
-  imports: [RouterLink, RouterOutlet],
+  imports: [RouterOutlet, RouterLink],
   templateUrl: './welcome.component.html',
   styleUrl: './welcome.component.css'
 })

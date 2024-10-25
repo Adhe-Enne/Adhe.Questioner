@@ -1,15 +1,15 @@
 import { JsonPipe, NgIf } from '@angular/common';
 import { Component } from '@angular/core';
-import { ReactiveFormsModule, FormGroup, FormBuilder, Validators, AbstractControl, ValidationErrors } from '@angular/forms';
-import { RouterLink } from '@angular/router';
+import { ReactiveFormsModule, FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { CommonService } from '../../../service/common.service';
 import { Login } from '../../../enum/login';
 import { Validator } from '../../../enum/validator';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-register',
   standalone: true,
-  imports: [ReactiveFormsModule, NgIf, RouterLink, JsonPipe],
+  imports: [ReactiveFormsModule, NgIf, JsonPipe, RouterLink],
   templateUrl: './register.component.html',
   styleUrl: './register.component.css'
 })
@@ -21,19 +21,15 @@ export class RegisterComponent {
   public passWarn: boolean = false;
   public userWarn: boolean = false;
 
-  public constructor(private fb: FormBuilder, public commonService: CommonService) {
-    this.login = this.fb.group(
+  public constructor(private fb: FormBuilder, public comSrv: CommonService) {
+    this.login = this.fb.nonNullable.group(
       {
         user: ['', Validators.required],
         password: ['', [Validators.required, Validators.minLength(4)]],
         rePassword: ['']
-      }, { validator: this.customPasswordMatching.bind(this) }
+      },
+      { validators: this.comSrv.customPasswordMatching.bind(this) }
     );
-  }
-
-  public customPasswordMatching(control: AbstractControl): ValidationErrors | null {
-    const ret = this.commonService.areEqual(control.value.password, control.value.rePassword);
-    return ret ? null : { passwordMismatchError: true };
   }
 
   public log(): void {
