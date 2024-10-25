@@ -1,0 +1,38 @@
+
+/* .center {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  min-height: 100vh !important;
+} */
+.rowdies-light {
+  font-family: "Rowdies", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+}
+
+.rowdies-bold {
+  font-family: "Rowdies", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.p-tag {
+  font-family: 'Rowdies', cursive;
+  font-size: 2.3em;
+  color: whitesmoke;
+}
+/* .center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+} */
+.dn-hr {
+  border-width: 5px;
+  border-color: var(--color-common) !important;
+  width: 15%;
+  /* Cambia este valor según lo necesites */
+  margin: 0 auto;
+  /* Esto lo centra horizontalmente */
+}

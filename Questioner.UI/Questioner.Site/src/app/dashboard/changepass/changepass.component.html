@@ -1,0 +1,38 @@
+<!-- <p>changepass works!</p> -->
+<div class="row">
+  <div class="col-lg-6 offset-lg-3">
+<h3 class="text-center">
+  Cambiar Contraseña
+</h3>
+<form [formGroup]="this.changepass"  (ngSubmit)="this.savePass()">
+  <div class="mb-3">
+    <input type="text" class="form-control" placeholder="Contraseña Anterior" [formControlName]="LoginEnum.LastPass">
+    <span class="text-danger" *ngIf="this.comSrv.checkControl(this.changepass, LoginEnum.LastPass)">
+      La ultima contraseña <strong> es Requerida</strong>
+    </span>
+  </div>
+  <div class="mb-3">
+    <input type="text" class="form-control" placeholder="Nueva Contraseña" [formControlName]="LoginEnum.Pass">
+    <span class="text-danger" *ngIf="this.comSrv.checkControl(this.changepass, LoginEnum.Pass)">
+      La contraseña <strong> es Requerida</strong>
+    </span>
+    <span class="text-danger" *ngIf="this.comSrv.checkControl(this.changepass, LoginEnum.Pass, Validator.MinLength)">
+      La contraseña debe tener al menos <strong> 4 Caracteres</strong>
+    </span>
+  </div>
+<div class="mb-3">
+  <input type="text" class="form-control" placeholder="Repita Contraseña" [formControlName]="LoginEnum.RePass">
+  <span class="text-danger" *ngIf="this.comSrv.checkControl(this.changepass, LoginEnum.RePass)">
+    Este campo es <strong> Obligatorio</strong>
+  </span>
+  <span class="text-danger" *ngIf="!this.comSrv.areEqual(this.changepass.value.password,this.changepass.value.rePassword)">
+    Las contraseñas deben <strong> Coincidir</strong>
+  </span>
+</div>
+<div class="col text-center">
+<button class="btn btn-primary btn-login" [disabled]="this.changepass.invalid">Aceptar</button>
+<button class="btn btn-secondary m-2">Volver</button>
+</div>
+</form>
+  </div>
+</div>
