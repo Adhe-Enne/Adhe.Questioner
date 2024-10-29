@@ -5,7 +5,21 @@ VisualStudioVersion = 17.11.35219.272
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Questioner.Api", "Questioner.Api\Questioner.Api.csproj", "{1AC2EA96-98AC-49FC-9FE8-981C410E7DF2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Questioner.Domain", "Questioner.Domain\Questioner.Domain.csproj", "{DF4989F9-FC57-4AB4-BF75-6F935D8693AF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Questioner.Model", "Questioner.Domain\Questioner.Model.csproj", "{DF4989F9-FC57-4AB4-BF75-6F935D8693AF}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4 - Infra", "4 - Infra", "{31051FAB-51CC-43DB-82C1-A9A790926918}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1 - Driver", "1 - Driver", "{A3408172-7AC9-4C14-91FE-2A3EE0FF665C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2 - Application", "2 - Application", "{214A689D-8162-421A-98BB-C625FE8925CC}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3 - Domain", "3 - Domain", "{FA9D2DE8-508C-4950-8065-3E595F19FBD4}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Core.Contracts", "..\Adhe.Core\Core.Abstractions\Core.Contracts.csproj", "{EA4D12AB-305B-43EC-91BE-2A3FCA90DAF2}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Questioner.Business", "Questioner.Business\Questioner.Business.csproj", "{8277092D-FB8E-4623-B3DB-4DA39CBDCFF6}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Questioner.Infrastructure", "Questioner.Data\Questioner.Infrastructure.csproj", "{FEBF3E29-D813-4BDA-8D73-8B70F8AFC649}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,9 +35,28 @@ Global
 		{DF4989F9-FC57-4AB4-BF75-6F935D8693AF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DF4989F9-FC57-4AB4-BF75-6F935D8693AF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DF4989F9-FC57-4AB4-BF75-6F935D8693AF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EA4D12AB-305B-43EC-91BE-2A3FCA90DAF2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EA4D12AB-305B-43EC-91BE-2A3FCA90DAF2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EA4D12AB-305B-43EC-91BE-2A3FCA90DAF2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EA4D12AB-305B-43EC-91BE-2A3FCA90DAF2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8277092D-FB8E-4623-B3DB-4DA39CBDCFF6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8277092D-FB8E-4623-B3DB-4DA39CBDCFF6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8277092D-FB8E-4623-B3DB-4DA39CBDCFF6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8277092D-FB8E-4623-B3DB-4DA39CBDCFF6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FEBF3E29-D813-4BDA-8D73-8B70F8AFC649}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FEBF3E29-D813-4BDA-8D73-8B70F8AFC649}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FEBF3E29-D813-4BDA-8D73-8B70F8AFC649}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FEBF3E29-D813-4BDA-8D73-8B70F8AFC649}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{1AC2EA96-98AC-49FC-9FE8-981C410E7DF2} = {A3408172-7AC9-4C14-91FE-2A3EE0FF665C}
+		{DF4989F9-FC57-4AB4-BF75-6F935D8693AF} = {FA9D2DE8-508C-4950-8065-3E595F19FBD4}
+		{EA4D12AB-305B-43EC-91BE-2A3FCA90DAF2} = {FA9D2DE8-508C-4950-8065-3E595F19FBD4}
+		{8277092D-FB8E-4623-B3DB-4DA39CBDCFF6} = {214A689D-8162-421A-98BB-C625FE8925CC}
+		{FEBF3E29-D813-4BDA-8D73-8B70F8AFC649} = {31051FAB-51CC-43DB-82C1-A9A790926918}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {5C5E3C7F-0646-466C-AA2D-6E4B51CAFCDB}
