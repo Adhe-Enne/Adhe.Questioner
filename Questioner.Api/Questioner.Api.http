@@ -1,0 +1,8 @@
+@Questioner.Api_HostAddress = http://localhost:5288
+
+GET {{Questioner.Api_HostAddress}}/weatherforecast/
+Accept: application/json
+###
+
+GET {{Questioner.Api_HostAddress}}/api/default
+Accept: application/json
