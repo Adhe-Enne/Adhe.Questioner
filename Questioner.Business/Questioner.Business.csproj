@@ -4,16 +4,16 @@
     <TargetFramework>net8.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
+	  <LangVersion>latest</LangVersion>
   </PropertyGroup>
 
   <ItemGroup>
     <Folder Include="DTOs\" />
-    <Folder Include="Services\" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\Adhe.Core\Core.Abstractions\Core.Contracts.csproj" />
-    <ProjectReference Include="..\Questioner.Domain\Questioner.Model.csproj" />
+    <ProjectReference Include="..\..\Adhe.Core\Core.SharedServices\Core.SharedServices.csproj" />
+    <ProjectReference Include="..\Questioner.Repository\Questioner.Repository.csproj" />
   </ItemGroup>
 
 </Project>
