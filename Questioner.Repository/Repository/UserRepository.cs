@@ -5,7 +5,7 @@ using Questioner.Repository.Repository.Interfaces;
 
 namespace Questioner.Repository.Repository
 {
-    public class UserRepository : GenericRepositoryAsync<User>, IUserRepository
+    public class UserRepository : RepositoryAsync<User>, IUserRepository
     {
         public UserRepository(QuestionerDbContext dbContext) : base(dbContext) { }
     }

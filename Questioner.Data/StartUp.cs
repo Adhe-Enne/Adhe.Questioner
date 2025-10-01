@@ -16,11 +16,12 @@ namespace Questioner.Data
 
             ValidateConfiguration(connectionString, mayor, min, build);
 
-            services.AddDbContext<QuestionerDbContext>(options =>
+            services.AddDbContext<DbContext, QuestionerDbContext>(options =>
                 options.UseMySql(
                     connectionString, new MySqlServerVersion(new Version(mayor.Value, min.Value, build.Value)),
                     mySqlOptions => mySqlOptions.EnableRetryOnFailure()
                     )
+                .EnableSensitiveDataLogging()
                 );
         }
 

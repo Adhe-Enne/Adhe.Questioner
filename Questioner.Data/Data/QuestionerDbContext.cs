@@ -15,6 +15,7 @@ namespace Questioner.Infrastructure.Data
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
+            modelBuilder.ApplyConfiguration(new UserConfigurations());
         }
 
         public DbSet<User> Users { get; set; }

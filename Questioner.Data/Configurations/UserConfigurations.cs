@@ -10,81 +10,59 @@ namespace Questioner.Data.Configurations
         protected override void ConfigurateConstraints(EntityTypeBuilder<User> builder)
         {
             builder.HasKey(u => u.Id);
-
             builder.HasIndex(u => u.Email).IsUnique();
-            builder.Property(u => u.Email)
-                .IsRequired()
-                .HasMaxLength(255);
-
-            builder.Property(u => u.Name)
-                .IsRequired()
-                .HasMaxLength(50);
-
             builder.HasIndex(u => u.DNI).IsUnique();
-            builder.Property(u => u.DNI)
-                .HasMaxLength(9);
-
-            builder.Property(u => u.PhoneNumber)
-                .HasMaxLength(20);
-
-            builder.Property(u => u.PasswordHash)
-                .IsRequired();
-            builder.Property(u => u.PasswordSalt)
-                .IsRequired();
-
-            builder.Property(u => u.Image)
-                .HasMaxLength(255);
-            builder.Property(u => u.City)
-                .HasMaxLength(50);
-            builder.Property(u => u.Country)
-                .HasMaxLength(50);
-
-            builder.Property(u => u.Role)
-                .IsRequired();
-
-            builder.Property(u => u.IsActive)
-                .IsRequired();
         }
 
         protected override void ConfigurateProperties(EntityTypeBuilder<User> builder)
         {
-            builder.Property(u => u.Id)
-                .HasColumnType("char(36)");
-
             builder.Property(u => u.Email)
+                .IsRequired()
+                .HasMaxLength(255)
                 .HasColumnType("varchar(255)");
 
             builder.Property(u => u.Name)
+                .IsRequired()
+                .HasMaxLength(50)
                 .HasColumnType("varchar(50)");
 
             builder.Property(u => u.DNI)
+                .HasMaxLength(9)
                 .HasColumnType("varchar(9)");
 
             builder.Property(u => u.PhoneNumber)
+                .HasMaxLength(20)
                 .HasColumnType("varchar(20)");
 
             builder.Property(u => u.Image)
+                .HasMaxLength(255)
                 .HasColumnType("varchar(255)");
 
             builder.Property(u => u.City)
-                .HasColumnType("varchar(50)");
+                .HasMaxLength(50)
+                .HasColumnType("varchar(50)")
 
+                .HasMaxLength(50);
             builder.Property(u => u.Country)
+                .HasMaxLength(50)
                 .HasColumnType("varchar(50)");
 
             builder.Property(u => u.PasswordHash)
-                .HasColumnType("varbinary(max)");
+                .IsRequired()
+                .HasColumnType("longblob");
 
             builder.Property(u => u.PasswordSalt)
-                .HasColumnType("varbinary(max)");
+                .IsRequired()
+                .HasColumnType("longblob");
 
             builder.Property(u => u.Role)
+                .IsRequired()
                 .HasMaxLength(20)
                 .HasColumnType("varchar(20)")
-                .HasConversion<string>() // Guarda como texto el enum
-                .IsRequired();
+                .HasConversion<string>();
 
             builder.Property(u => u.IsActive)
+                .IsRequired()
                 .HasColumnType("bit")
                 .HasDefaultValue(true);
         }
