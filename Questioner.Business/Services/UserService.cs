@@ -7,6 +7,5 @@ namespace Questioner.Business.Services
 {
     public class UserService(IUserRepository userRepository) : GenericService<User>(userRepository), IUserService
     {
-        private readonly IUserRepository _userRepository = userRepository;
     }
 }

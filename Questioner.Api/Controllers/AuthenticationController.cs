@@ -3,7 +3,6 @@ using Core.Framework.Contracts.Api;
 using Core.Framework.Contracts.Api.Interfaces;
 using Core.Framework.Contracts.Shared.Request;
 using Core.Framework.Contracts.Shared.Response;
-using Core.Framework.Controllers;
 using Core.SharedServices;
 using Core.SharedServices.Authentication;
 using Core.SharedServices.Security;
@@ -15,18 +14,17 @@ using Questioner.Data.Entities;
 using System.Net;
 using System.Security.Claims;
 
-namespace Questioner.Api.Controllers
+namespace Core.Framework.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class AuthController(
-        ILogger<AuthController> logger,
+    public class AuthenticationController(
+        ILogger<AuthenticationController> logger,
         IGenericService<User> service,
         IMapper mapper,
         IAuthenticationService<User> authService, ITokenService<User> tokenService
         ) : BaseController(logger, mapper)
     {
-        private readonly IGenericService<User> _service = service;
         private readonly IAuthenticationService<User> _authService = authService;
         private readonly ITokenService<User> _tokenService = tokenService;
 
@@ -94,8 +92,7 @@ namespace Questioner.Api.Controllers
         {
             IApiResult result = new ApiResult();
             // For JWT, logout is typically handled on the client side by deleting the token.
-
-            // Optionally, you can implement token blacklisting on the server side if needed.
+            
             result.Set(HandleSuccess(Entity.USER_LOGOUT_OK));
             return ResponseApi(result);
         }

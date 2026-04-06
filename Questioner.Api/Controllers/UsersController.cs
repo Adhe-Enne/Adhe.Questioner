@@ -3,7 +3,6 @@ using Core.Framework.Contracts.Api;
 using Core.Framework.Contracts.Api.Interfaces;
 using Core.Framework.Contracts.Shared.Request;
 using Core.Framework.Contracts.Shared.Response;
-using Core.Framework.Controllers;
 using Core.Framework.Messages;
 using Core.SharedServices;
 using Core.SharedServices.Authentication;
@@ -14,7 +13,7 @@ using Questioner.Api.Contracts.Messages;
 using Questioner.Data.Entities;
 using System.Net;
 
-namespace Questioner.Api.Controllers
+namespace Core.Framework.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
